@@ -584,6 +584,8 @@ private:
 
     static void loadRecordingSetting(const Settings& settings_json, RecordingSetting& recording_setting)
     {
+        recording_setting.requests.clear();
+        
         Settings recording_json;
         if (settings_json.getChild("Recording", recording_json)) {
             recording_setting.record_on_move = recording_json.getBool("RecordOnMove", recording_setting.record_on_move);
